@@ -29,7 +29,7 @@ body {
 
 }
 
-.todo-head {
+.todo-header {
     font-family: 'Lobster';
     font-size: 80px;
     text-align: center;
@@ -65,19 +65,33 @@ body {
 .todo-item:nth-child(even) {
     background: #f1f2f6; 
 }
+
 .todo-item.done {
+    transition: all .5s ease;
     background: #7bed9f;
     color: #fff;
     /* TODO add transitions */
 }
+.todo-item h2 {
+    font-size: 1em;
+    cursor: pointer;
+}
+.todo-item.done > h2 {
+    text-decoration: line-through;
+}
 .todo-item.remove {
+    transition: all .3s ease-in-out;
+    transform: translateX(-20%);
+    opacity: 0;
     background: #ff6b81;
     color: #fff;
     /* TODO add transitions */
 }
 .todo-item.remove > .close,
 .todo-item.done > .close {
-    opacity: 0;
+    background: rgba(0,0,0,.2);
+    color: #fff;
+    /* opacity: 0; */
 }
 
 .close {
